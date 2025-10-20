@@ -5,33 +5,33 @@
 ## Suivi des problèmes
 
 Toute activité de développement doit être associée à un Ticket.
-Il s’agit d’un ticket trac sur https://forge.ipsl.fr/ioserver.
+Il consiste d’un ticket trac par le lien suivant: https://forge.ipsl.fr/ioserver.
 
-Les informations doivent comprendre :
-* une description du problème abordé,
+Les détails d'un ticket consiste de:
+* une bréve description du problème,
 * un lien vers la branche,
-* des éléments de test.
+* l'evidence de tests.
 
-## Principes de Conception et Revue
+## Principes de désign et Revu
 
-XIOS vise à être un serveur d’entrée-sortie générique pour les simulations. XIOS essaie d’éviter l’intégrartion de code spécifique à un modèle dans son implémentation. Les fonctionnalités doivent être universelles et implémentées au regard de la variété des spécificités des modèles addressables par XIOS.
+XIOS vise à être un serveur d’entrée/sortie générique pour les simulations. XIOS essaie d’éviter l’intégration de code spécifique à un modèle dans son implémentation. Les fonctionnalités doivent être universelles et implémentées concernant la variété des spécificités des modèles addressables par XIOS.
 
-Les nouvelles fonctionnalités doivent être proposées à XIOS à l’aide d’un ticket de revue de conception. Cela permet d’adresser à la fois l’enjeu général et l'objectif de l'implémentation, ainsi que de discuter des principes de conception avant de proposer des modifications détaillées du code.
+Les nouvelles fonctionnalités doivent être proposées à XIOS avec un ticket de conception qui a été revu. Cela permet d’adresser en parallel le problem général et le but d'implémentation, ainsi de discuter les principes de conception avant de proposer des modifications détaillées du code.
 
-Un ticket de revue de conception doit inclure :
-* une déclaration du résultat souhaité ;
+Un ticket de conception doit avoir:
+* une déscription du résultat souhaité ;
 * une description du contexte et de la plus value-value visés ;
 * une proposition sur la manière dont cela pourrait être mis en œuvre dans la base de code XIOS ;
 * une proposition sur la manière dont l’interface utilisateur pourrait être mise en œuvre :
     * pour répondre aux besoins spécifiques de la demande en étant extensible et généraliste ;
-* comment la nouvelle fonctionnalité peut être testée ;
+* Un guide pour testée la nouvelle fonctionnalité ;
 * une évaluation initiale des risques sur les capacités existante de la base du code.
 
 Les petites fonctionnalités et les corrections de bugs peuvent contourner cette étape de révision de conception, si l’équipe de développement de XIOS l’accepte.
 
 ## Versions Majeures
 
-XIOS3 est la version majeure actuelle du développement.
+XIOS3 est la version actuelle majeure du développement.
 
 XIOS2 est une version stable incompatible avec les versions antérieures.
 XIOS2 est encore largement utilisé dans certaines simulations, mais ne fait plus l'objet de développement propre.
@@ -42,31 +42,31 @@ Les arbres sources de ces versions sont divergents, une gestion de l'organisatio
 
 1. Les corrections de bugs peuvent s’appliquer :
     * au trunk de XIOS3 uniquement :
-        * il s’agit de l’approche par défaut ;
+        * Ceci est l’approche défaut ;
     * au trunk de XIOS2 et le trunk de XIOS3 :
         * s’il est démontré que le bug pose des problèmes aux utilisateurs de XIOS2 ;
         * dans ce cas, créez deux branches liées à un ticket, pour gérer la correction du bug.
     * au trunk de XIOS2 uniquement, si cela n’a aucun rapport avec XIOS3 :
         * s’il est démontré que le bug cause des problèmes aux utilisateurs de XIOS2 et qu’il n’est pas évident dans XIOS3.
-    * à une branche de version spécifique (alors ciblée par le ticket) :
-        * seule la dernière version doit être ciblée pour une correction de bug :
+    * à une branche de version spécifique (ensuite ciblée par le ticket) :
+        * seulement la dernière version doit être ciblée pour une correction de bug :
             * à moins qu’un cas spécifique ne soit présenté et agréé dans un ticket pour expliquer pourquoi une branche plus ancienne devrait également être incluse ;
         * une correction de bug de branche de publication doit toujours être considérée pour être proposée aux trunks XIOS2 et XIOS3 :
             * bien que les tests puissent montrer que cela n’est pas nécessaire (par exemple, déjà résolu sur le trunk).
 2. Nouvelles fonctionnalités
-    * De nouvelles fonctionnalités peuvent être proposées au trunk de XIOS3 uniquement :
-        * C’est la position par défaut pour l’effort de développement ;
+    * De nouvelles fonctionnalités peuvent être proposées au trunk de XIOS3 uniquement si:
+        * c'est la position défaut pour l’effort de développement ;
         * il est reconnu que la plupart des nouvelles fonctionnalités ne seront pas disponibles dans XIOS2.
-    * De nouvelles fonctionnalités peuvent être proposées au trunk de XIOS3, avec un portage vers le trunk do XIOS2 :
-        * c’est un cas inhabituel, on s’attend à ce que de nouvelles fonctionnalités ne soient pas ajoutées à XIOS2 ;
-        * si la fonctionnalité est examinée et évaluée comme appropriée pour le développement associé, elle peut cibler XIOS2 et XIOS3, par exception ;
+    * De nouvelles fonctionnalités peuvent être proposées au trunk de XIOS3, avec un portage vers le trunk de XIOS2 si:
+        * c’est un cas inhabituel, où on s’attend à ce que de nouvelles fonctionnalités ne soient pas ajoutées à XIOS2 ;
+        * la fonctionnalité est examinée et évaluée comme appropriée pour le développement associé, et par exception peut cibler XIOS2 et XIOS3;
         * deux branches liées ciblant XIOS2 et XIOS3 sont prévues, associées à un seul ticket.
     * Les nouvelles fonctionnalités ne peuvent pas être appliquées uniquement à XIOS2 :
-        * XIOS2 n’est pas développé indépendamment de XIOS3.
+        * Par ce que XIOS2 n’est pas développé indépendamment de XIOS3.
 
-## Revue et Intégration 
+## Revue et Intégration
 
-Les propositions de code doivent être examinées, par un ou plusieurs relecteurs de code, avec des commentaires ajoutés au ticket et des mises à jour de la branche, jusqu’à ce que le ou les relecteurs soient satisfaits.
+Les propositions de code doivent être examinées, par un ou plusieurs relecteurs de code, avec des commentaires ajoutés au ticket et mettre à jour la branche, jusqu’à ce que le(s) relecteur(s) soient satisfaits.
 
 L'intégration du contenu de la branche sur le(s) trunk(s) doit être entreprise par l’un des développeurs principaux de XIOS.
 
@@ -76,7 +76,7 @@ export uname={myuname}
 # pour consulter le trunk à partir de IPSL XIOS3:
 svn co svn+ssh://$uname@forge.ipsl.jussieu.fr/ipsl/forge/projets/ioserver/svn/XIOS3/trunk
 
-# pour créer un répertoire spécifique au développeur pour héberger les branches soumises par ce développeur
+# pour créer un répertoire spécifique au développeur pour accueillir les branches soumises par ce développeur
 svn mkdir svn+ssh://$uname@forge.ipsl.jussieu.fr/ipsl/forge/projets/ioserver/svn/XIOS3/dev/$uname -m 'dev branches for $uname'
 # notez que cela n’est nécessaire qu’une seule fois, puis le répertoire est disponible pour une utilisation ultérieure
 
@@ -92,7 +92,7 @@ svn commit
 </div>
 
 <div lang="en">
-   
+
 # Contributing Guide for XIOS development
 
 ## Git Code Maintenance
@@ -152,7 +152,7 @@ It is not essential to have an Issue and a Merge Request for small changes, but 
 
 ### Design Principles & design Review
 
-XIOS aims to be a generally applicable Input Output Server for simulations. XIOS tries to avoid embedding 
+XIOS aims to be a generally applicable Input Output Server for simulations. XIOS tries to avoid embedding
 model specific code within it's implementation. Features should be generally useful and implemented such
 that models provide their own customisations through model configuration of XIOS.
 
@@ -204,7 +204,7 @@ The source trees for these major versions are divergent, so management is needed
     * New features may be proposed to XIOS3, with a back port to XIOS2:
         * this is an unusual case, the expectation is that new features are not added to XIOS2;
         * if the feature is reviewed and assessed as appropriate for linked development, it may target XIOS2 and XIOS3, by exception;
-        * two linked branches targeting XIOS2 & XIOS3 are provided, linked to one ticket. 
+        * two linked branches targeting XIOS2 & XIOS3 are provided, linked to one ticket.
     * New features may not be applied to XIOS2 only:
         * XIOS2 is not being developed independent of XIOS3.
 
