@@ -10,7 +10,7 @@ To set this up, then my `Local` is configured to use `git svn` and to communicat
 
 #### Initial Creation
 
-Create a `Local` Git repository and link this to the IPSL subversion.
+Create a `Local` git repository and link this to the IPSL subversion.
 
 ```
 git init XIOS-repository-migration-experiments
@@ -39,7 +39,7 @@ Note: at this stage, it is worth cross-checking that your Local IPSL branch hist
 
 #### Working with Branches
 
-Subversion synchronisation involves working in a `Local` Git repository.
+Subversion synchronisation involves working in a `Local` git repository.
 
 Updates from IPSL Subversion are obtained, then any `Mirror` branches that are being managed are rebased using the svn content.
 
