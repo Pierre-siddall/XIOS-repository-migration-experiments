@@ -16,7 +16,7 @@ Les détails d'un ticket consiste de:
 
 XIOS vise à être un serveur d’entrée/sortie générique pour les simulations. XIOS essaie d’éviter l’intégration de code spécifique à un modèle dans son implémentation. Les fonctionnalités doivent être universelles et implémentées concernant la variété des spécificités des modèles addressables par XIOS.
 
-Les nouvelles fonctionnalités doivent être proposées à XIOS avec un ticket de conception qui a été revu. Cela permet d’adresser en parallel le problem général et le but d'implémentation, ainsi de discuter les principes de conception avant de proposer des modifications détaillées du code.
+Les nouvelles fonctionnalités doivent être proposées à XIOS avec un ticket de conception qui a été revu. Cela permet d’adresser en parallel le but général et le but d'implémentation, ainsi de discuter les principes de conception avant de proposer des modifications détaillées du code.
 
 Un ticket de conception doit avoir:
 * une déscription du résultat souhaité ;
@@ -48,7 +48,7 @@ Les arbres sources de ces versions sont divergents, une gestion de l'organisatio
         * dans ce cas, créez deux branches liées à un ticket, pour gérer la correction du bug.
     * au trunk de XIOS2 uniquement, si cela n’a aucun rapport avec XIOS3 :
         * s’il est démontré que le bug cause des problèmes aux utilisateurs de XIOS2 et qu’il n’est pas évident dans XIOS3.
-    * à une branche de version spécifique (ensuite ciblée par le ticket) :
+    * à une branche de version spécifique et peux etre ensuite ciblée par le ticket :
         * seulement la dernière version doit être ciblée pour une correction de bug :
             * à moins qu’un cas spécifique ne soit présenté et agréé dans un ticket pour expliquer pourquoi une branche plus ancienne devrait également être incluse ;
         * une correction de bug de branche de publication doit toujours être considérée pour être proposée aux trunks XIOS2 et XIOS3 :
@@ -58,7 +58,7 @@ Les arbres sources de ces versions sont divergents, une gestion de l'organisatio
         * c'est la position défaut pour l’effort de développement ;
         * il est reconnu que la plupart des nouvelles fonctionnalités ne seront pas disponibles dans XIOS2.
     * De nouvelles fonctionnalités peuvent être proposées au trunk de XIOS3, avec un portage vers le trunk de XIOS2 si:
-        * c’est un cas inhabituel, où on s’attend à ce que de nouvelles fonctionnalités ne soient pas ajoutées à XIOS2 ;
+        * c’est un cas inhabituel, on s’attend à ce que de nouvelles fonctionnalités ne soient pas ajoutées à XIOS2 ;
         * la fonctionnalité est examinée et évaluée comme appropriée pour le développement associé, et par exception peut cibler XIOS2 et XIOS3;
         * deux branches liées ciblant XIOS2 et XIOS3 sont prévues, associées à un seul ticket.
     * Les nouvelles fonctionnalités ne peuvent pas être appliquées uniquement à XIOS2 :
@@ -150,23 +150,22 @@ Merge Requests may link to Issues, and may explicitly close Issues or simply con
 
 It is not essential to have an Issue and a Merge Request for small changes, but for larger changes or Issues without solution, then an Issue is useful to manage awareness and work.  this is particularly the case when designing new features.
 
-### Design Principles & design Review
+### Design Principles & Review
 
 XIOS aims to be a generally applicable Input Output Server for simulations. XIOS tries to avoid embedding
 model specific code within it's implementation. Features should be generally useful and implemented such
 that models provide their own customisations through model configuration of XIOS.
 
-New features should be proposed to XIOS using a design review ticket. This enables the general target and
-the implementation targets to be explored and the design principles discussed prior to the proposal
-of detailed code changes.
+New features should be proposed to XIOS with a design ticket which has been reviewed. This permits the general goal and
+implementation targets to be addressed in parallel as well as discuss the design principles before proposing detailed code changes.
 
-A design review ticket shall include:
-* a statement of desired outcome;
+A design ticket should have:
+* a description of the desired result;
 * a description of the context and value being targeted;
 * a proposal on how this could be implemented within the XIOS code base;
 * a proposal on how the user interface could be implemented:
     * to meet the specific needs of the propser and to be extensible and useful generally;
-* how the new feature can be tested;
+* a guide to test the new feature;
 * an initial assessment of risks to existing areas of the code base.
 
 Small features and bug fixes may bypass this design review stage, if agreed by the XIOS development team.
@@ -197,21 +196,21 @@ The source trees for these major versions are divergent, so management is needed
             * unless a specific case is made and agreed on a ticket for why one further older release branch should be included as well;
         * a release branch bug fix shall always be considered for proposal to `main` XIOS3:
             * though testing may show that this is not required (e.g. already resolved on `main`).
-1. New Features
-    * New features may be proposed to XIOS3 only:
+2. New Features
+    * New features may be proposed to XIOS3 only if:
         * this is the default position for development effort;
         * it is recognised that most new features shall not be available in XIOS2.
-    * New features may be proposed to XIOS3, with a back port to XIOS2:
+    * New features may be proposed to XIOS3, with a back port to XIOS2 if:
         * this is an unusual case, the expectation is that new features are not added to XIOS2;
-        * if the feature is reviewed and assessed as appropriate for linked development, it may target XIOS2 and XIOS3, by exception;
+        * if the feature is reviewed and assessed as appropriate for linked development, and by exception can target XIOS2 and XIOS3;
         * two linked branches targeting XIOS2 & XIOS3 are provided, linked to one ticket.
     * New features may not be applied to XIOS2 only:
-        * XIOS2 is not being developed independent of XIOS3.
+        * Because XIOS2 is not being developed independently of XIOS3.
 
 ## Review & Merge
 
 Code proposals shall be reviewed, by one of more code reviewers, with comments added to the `Merge Request`
-and updates to the branch, until the reviewer(s) are content.
+and current updates added to the branch, until the reviewer(s) are satisfied.
 
 Reviewers shall use the `Review` section to request changes or indicate that they are content.
 
